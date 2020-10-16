@@ -20,7 +20,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		;
 	for (s2count = 0; s2[s2count]; s2count++)
 		;
-	if( s2count > n) 
+	if( s2count > n)
 		s2count = n;  
 	else
 		n = s2count;
