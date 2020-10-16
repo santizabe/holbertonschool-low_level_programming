@@ -20,8 +20,8 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		;
 	for (s2count = 0; s2[s2count]; s2count++)
 		;
-	if( s2count > n)
-		s2count = n;  
+	if (s2count > n)
+		s2count = n;
 	else
 		n = s2count;
 	sizeBuffer = s1count + s2count + 1;
@@ -30,11 +30,11 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		return (NULL);
 	for (i = 0; i < sizeBuffer - 1; i++)
 	{
-		if(i < s1count) 
+		if (i < s1count)
 			p[i] = s1[i];
 		else
 			p[i] = s2[i - s1count];
 	}
-	p[sizeBuffer-1] = '\0';
+	p[sizeBuffer - 1] = '\0';
 	return (p);
 }
