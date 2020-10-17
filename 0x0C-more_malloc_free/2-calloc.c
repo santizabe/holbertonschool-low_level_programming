@@ -13,7 +13,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	int i;
 	int max;
 
-	if (nmemb < 1 || size < 1)
+	if (nmemb == 1 || size == 1)
 		return (NULL);
 	max = size * nmemb;
 	p = malloc(size * nmemb);
