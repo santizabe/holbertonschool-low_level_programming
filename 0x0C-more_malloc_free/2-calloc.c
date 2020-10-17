@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "stdlib.h"
 
 /**
  * _calloc - allocates memory for an initialized buffer
@@ -13,7 +13,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	int i;
 	int max;
 
-	if (nmemb < 0 || size < 0)
+	if (nmemb < 1 || size < 1)
 		return (NULL);
 	max = size * nmemb;
 	p = malloc(size * nmemb);
