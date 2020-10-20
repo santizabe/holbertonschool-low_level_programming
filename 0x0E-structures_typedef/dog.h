@@ -1,6 +1,6 @@
 #ifndef DOG_H
 #define DOG_H
-
+#include <stdlib.h>
 /**
 * struct dog - structure for Holberton project
 * @name: Well..
@@ -16,4 +16,6 @@ char *owner;
 } dog;
 
 void init_dog(struct dog *d, char *name, float age, char *owner);
+void print_dog(struct dog *d);
+
 #endif
