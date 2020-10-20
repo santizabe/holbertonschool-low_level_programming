@@ -1,39 +1,6 @@
 #include "dog.h"
 
 /**
-* new_dog - new dog
-* @name: name
-* @age: age
-* @owner: owner
-* Return: new dog
-*/
-
-dog_t *new_dog(char *name, float age, char *owner)
-{
-	char *copy1, *copy2;
-
-	copy1 = malloc(sizeof(name));
-	if (!copy1)
-	{
-		free(copy1);
-		return (NULL);
-	}
-	copy1 = _strdup(name)
-	copy2 = malloc(sizeof(name));
-	if (!copy2)
-	{
-		free(copy2);
-		return (NULL);
-	}
-	copy2 = _strdup(owner);
-	new_dog->name = name;
-	new_dog->age = age;
-	new_dog->owner = owner;
-
-	return (new_dog);
-}
-
-/**
  * *_strdup - function with one argument
  * @str: string argument
  *
@@ -59,3 +26,44 @@ char *_strdup(char *str)
 	ptr[j] = '\0';
 	return (ptr);
 }
+
+/**
+* new_dog - new dog
+* @name: name
+* @age: age
+* @owner: owner
+* Return: new dog
+*/
+
+dog_t *new_dog(char *name, float age, char *owner)
+{
+	dog_t *new_dog;
+	char *copy1, *copy2;
+
+	new_dog = malloc(sizeof(dog_t));
+	if (!new_dog)
+	{
+		free(new_dog);
+		return (NULL);
+	}
+	copy1 = malloc(sizeof(name));
+	if (!copy1)
+	{
+		free(copy1);
+		return (NULL);
+	}
+	copy1 = _strdup(name);
+	copy2 = malloc(sizeof(name));
+	if (!copy2)
+	{
+		free(copy2);
+		return (NULL);
+	}
+	copy2 = _strdup(owner);
+	new_dog->name = name;
+	new_dog->age = age;
+	new_dog->owner = owner;
+
+	return (new_dog);
+}
+
