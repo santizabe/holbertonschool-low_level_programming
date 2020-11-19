@@ -8,5 +8,23 @@
 
 int print_last_digit(int i)
 {
-	return (_putchar((i % 10) + '0'));
+	if (i > 9)
+	{
+		_putchar((i % 10) + '0');
+	}
+	else
+	{
+		if (i < 0)
+		{
+			i *= -1;
+			_putchar((i % 10) + '0');
+		}
+		else
+		{
+			_putchar(i + '0');
+			return (i + '0');
+		}
+	}
+
+	return (i % 10);
 }
