@@ -22,7 +22,7 @@ void jack_bauer(void)
 			if (d == 9)
 			{
 				c++;
-				d = 0;
+				d = -1;
 			}
 		}
 		if (a == 2 && b == 3)
