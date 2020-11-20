@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
-* comments
+* jack_bauer - prints some stuff
 *
 **/
 
@@ -30,7 +30,7 @@ void jack_bauer(void)
 		if (b == 9)
 		{
 			a++;
-			b = 0;
+			b = -1;
 		}
 	}
 }
