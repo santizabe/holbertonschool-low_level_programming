@@ -16,8 +16,8 @@ int main(void)
 		temp2 = b;
 		a = temp2;
 		b = temp1 + a;
-		if (c < 98)
-                printf("%.0Lf, ", b);
+		if (c < 97)
+			printf("%.0Lf, ", b);
 	}
 	printf("%.0Lf\n", b);
 
