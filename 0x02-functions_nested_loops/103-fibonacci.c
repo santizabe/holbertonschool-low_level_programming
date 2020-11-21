@@ -16,7 +16,7 @@ int main(void)
 		temp2 = b;
 		a = temp2;
 		b = temp1 + a;
-		if (b % 2 == 0)
+		if (b % 2 == 0 && b / 2 == 1)
 		{
 			sum += b;
 		}
