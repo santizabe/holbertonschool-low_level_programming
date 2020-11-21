@@ -7,16 +7,15 @@
 
 int main(void)
 {
-	unsigned int a = 0, b = 1, temp1, temp2;
-	unsigned int c, sum;
+	int a = 1, b = 2, temp;
+	int sum = 0;
 
-	for (c = 1; b < 4000000 ; c++)
+	while (b < 4000000)
 	{
-		temp1 = a;
-		temp2 = b;
-		a = temp2;
-		b = temp1 + a;
-		if (b % 2 == 0 && b / 2 == 1)
+		temp = a;
+		b += a; 
+		a = temp;
+		if (b % 2 == 0)
 		{
 			sum += b;
 		}
