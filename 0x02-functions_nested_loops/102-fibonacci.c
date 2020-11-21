@@ -17,9 +17,9 @@ int main(void)
 		a = temp2;
 		b = temp1 + a;
 		if (c < 50)
-			printf("%0.lf, ", b);
+			printf("%0.f, ", b);
 	}
-	printf("%0.lf\n", b);
+	printf("%0.f\n", b);
 
 	return (0);
 }
