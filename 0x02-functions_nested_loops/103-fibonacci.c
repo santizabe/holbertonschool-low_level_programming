@@ -7,10 +7,10 @@
 
 int main(void)
 {
-	double a = 0, b = 1, temp1, temp2;
-	int c, sum;
+	unsigned int a = 0, b = 1, temp1, temp2;
+	unsigned int c, sum;
 
-	for (c = 0; b < 4000001 ; c++)
+	for (c = 1; b < 4000002 ; c++)
 	{
 		temp1 = a;
 		temp2 = b;
