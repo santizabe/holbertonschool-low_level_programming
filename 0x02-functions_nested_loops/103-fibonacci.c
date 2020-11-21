@@ -10,7 +10,7 @@ int main(void)
 	unsigned int a = 0, b = 1, temp1, temp2;
 	unsigned int c, sum;
 
-	for (c = 1; b < 4000002 ; c++)
+	for (c = 1; b < 4000000 ; c++)
 	{
 		temp1 = a;
 		temp2 = b;
