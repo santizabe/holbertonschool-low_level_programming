@@ -1,10 +1,11 @@
 #include "holberton.h"
 
 /**
-* fizz_buzz - xD
+* main - xD
+* Return: 0
 */
 
-void fizz_buzz(void)
+int main(void)
 {
 	int i;
 
@@ -22,15 +23,6 @@ void fizz_buzz(void)
 		else
 			printf("%d ", i);
 	}
-}
 
-/**
-* main - Main entry
-* Return: 0
-*/
-
-int main(void)
-{
-	fizz_buzz();
 	return (0);
 }
