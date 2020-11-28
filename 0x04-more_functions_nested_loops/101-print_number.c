@@ -20,15 +20,13 @@ void print_number(int n)
 			n *= -1;
 		}
 	}
-
 	c = n;
-
 	for (i = 0; c != 0; i++)
 		c /= 10;
 	temp = i;
 	while (a <= temp)
 	{
-		i = temp
+		i = temp;
 		c = n;
 		while ((i - a) > 0)
 		{
