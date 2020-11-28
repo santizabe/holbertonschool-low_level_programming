@@ -8,17 +8,14 @@
 
 void print_number(int n)
 {
-	int a = 1, i, c, temp;
+	int a = 1, i, c, temp, mod;
 
 	if (n <= 0)
 	{
 		if (n == 0)
 			_putchar('0');
 		else
-		{
 			_putchar('-');
-			n *= -1;
-		}
 	}
 	c = n;
 	for (i = 0; c != 0; i++)
@@ -33,7 +30,10 @@ void print_number(int n)
 			c /= 10;
 			i--;
 		}
-		_putchar((c % 10) + '0');
+		mod = c % 10;
+		if (mod < 0)
+			mod *= -1;
+		_putchar(mod + '0');
 		a++;
 	}
 }
