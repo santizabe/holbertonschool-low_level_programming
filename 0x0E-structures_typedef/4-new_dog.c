@@ -1,62 +1,74 @@
 #include "dog.h"
 
 /**
- * *_strdup - function with one argument
- * @str: string argument
+ * getLength - get length of a string
+ * @s: string
  *
- * Description: returns a pointer to allocated space in memory
- * Return: pointer
+ * Return: number of characters without \0
  */
-char *_strdup(char *str)
+unsigned int getLength(char *s)
 {
-	int i, j;
-	char *ptr;
+	unsigned int i = 0;
 
-	if (str == NULL)
-		return (NULL);
-	for (i = 0; *(str + i) != '\0'; i++)
-
-	ptr = malloc(sizeof(char) * i + 1);
-
-	if (ptr == NULL)
-		return (NULL);
-
-	for (j = 0; str[j] != '\0'; j++)
-		ptr[j] = str[j];
-	ptr[j] = '\0';
-	return (ptr);
+	while (s[i])
+		i++;
+	return (i);
 }
 
 /**
-* new_dog - new dog
-* @name: name
-* @age: age
-* @owner: owner
-* Return: new dog
-*/
+ * copyString - copy one string into another
+ * @s1: string to be copied
+ * @s2: copy of s1
+ *
+ * Return: nothing
+ */
+void copyString(char *s1, char *s2)
+{
+	unsigned int i = 0;
 
+	while (s1[i])
+	{
+		s2[i] = s1[i];
+		i++;
+	}
+	s2[i] = '\0';
+}
+
+/**
+ * new_dog - creates a new dog
+ * @name: Dog's name
+ * @age: Dog's age
+ * @owner: Dog's owner
+ *
+ * Return: pointer to new dog
+ */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	dog_t *new_dogy;
+	dog_t *yourDog = NULL;
+	char *newName = NULL, *newOwner = NULL;
 
-	new_dogy = malloc(sizeof(dog_t));
-	if (!new_dogy)
+	if (name == NULL || age < 0 || owner == NULL)
+		return (NULL);
+	yourDog = malloc(sizeof(dog_t));
+	if (yourDog == NULL)
+		return (NULL);
+	newName = malloc(sizeof(*newName) * getLength(name) + 1);
+	if (newName == NULL)
 	{
+		free(yourDog);
 		return (NULL);
 	}
-	new_dogy->name = _strdup(name);
-	if (!new_dogy->name)
+	copyString(name, newName);
+	newOwner = malloc(sizeof(*newOwner) * getLength(owner) + 1);
+	if (newOwner == NULL)
 	{
-		free(new_dogy);
+		free(newName);
+		free(yourDog);
 		return (NULL);
 	}
-	new_dogy->age = age;
-	new_dogy->owner = _strdup(owner);
-	if (!new_dogy->owner)
-	{
-		free(new_dogy->name);
-		free(new_dogy);
-		return (NULL);
-	}
-	return (new_dogy);
+	copyString(owner, newOwner);
+	yourDog->name = newName;
+	yourDog->age = age;
+	yourDog->owner = newOwner;
+	return (yourDog);
 }
