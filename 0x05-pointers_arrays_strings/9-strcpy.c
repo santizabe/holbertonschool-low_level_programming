@@ -10,7 +10,7 @@ char *_strcpy(char *dest, char *src)
 	int i, j;
 	char *cpy = src;
 
-	for (i = 0; *cpy; i++, *cpy++)
+	for (i = 0; cpy[i]; i++)
 	;
 	j = 0;
 	while (j < i)

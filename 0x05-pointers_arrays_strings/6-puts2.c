@@ -11,10 +11,9 @@ void puts2(char *str)
 	int i = 0, j = 0;
 	char *str1 = str;
 
-	while (*str1)
+	while (str1[i])
 	{
 		i++;
-		*str1++;
 	}
 	if (i % 2 == 0)
 		i -= 1;

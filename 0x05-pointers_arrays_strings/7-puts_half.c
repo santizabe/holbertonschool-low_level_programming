@@ -32,11 +32,8 @@ int _strlen(char *s)
 {
 	int i = 0;
 
-	while (*s)
-	{
+	while (s[i])
 		i++;
-		*s++;
-	}
 
-return (i);
+	return (i);
 }
