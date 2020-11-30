@@ -1,47 +1,23 @@
 #include "holberton.h"
-
 /**
- * infinite_add - adds two numbers
- * @n1: first number
- * @n2: second number
- * @r: buffer for result
- * @size_r: buffer size
- *
- * Return: address of r or 0
- */
-char *infinite_add(char *n1, char *n2, char *r, int size_r)
+ * *_memset - This function put a character in the firts n allocations of
+ * A block of memory.
+ * @s: The pointer to the block of memory
+ * @b: Character to be copied
+ * @n: The numbers of characters to be copied
+ * Return: The pointer to the block of memory
+ **/
+char *_memset(char *s, char b, unsigned int n)
 {
-	int i, j, k, l, m, n;
+	unsigned int i;
 
-	for (i = 0; n1[i]; i++)
-		;
-	for (j = 0; n2[j]; j++)
-		;
-	if (i > size_r || j > size_r)
-		return (0);
-	m = 0;
-	for (i -= 1, j -= 1, k = 0; k < size_r - 1; i--, j--, k++)
+	char *mem = s;
+
+	unsigned char value = b;
+
+	for (i = 0; i < n; i++)
 	{
-		n = m;
-		if (i >= 0)
-			n += n1[i] - '0';
-		if (j >= 0)
-			n += n2[j] - '0';
-		if (i < 0 && j < 0 && n == 0)
-		{
-			break;
-		}
-		m = n / 10;
-		r[k] = n % 10 + '0';
+		mem[i] = value;
 	}
-	r[k] = '\0';
-	if (i >= 0 || j >= 0 || m)
-		return (0);
-	for (k -= 1, l = 0; l < k; k--, l++)
-	{
-		m = r[k];
-		r[k] = r[l];
-		r[l] = m;
-	}
-	return (r);
+	return (mem);
 }
