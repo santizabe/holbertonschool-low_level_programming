@@ -1,42 +1,38 @@
 #include "holberton.h"
 
 /**
-*
-*
-*
-*
+* alloc_grid - Hello
+* @width: hello
+* @height: Hello v2.0
+* Return: Hello
 */
 
 int **alloc_grid(int width, int height)
 {
-	int **hello, i, j;
+	int **p, i, j;
 
 	if (width < 1 || height < 1)
 		return (NULL);
-	hello = malloc(height * sizeof(int));
-	if (hello == NULL)
+	p = malloc(height * sizeof(int));
+	if (p == NULL)
 	{
-		free(hello);
+		free(p);
 		return (NULL);
 	}
 
 	for (i = 0; i < height; i++)
 	{
-		hello[i] = malloc(width * sizeof(int));
-		if (hello[i] == NULL)
+		p[i] = malloc(width * sizeof(int));
+		if (p[i] == NULL)
 		{
-			free(hello[i]);
+			for (j = 0; j < i; j++)
+				free(p[j]);
+			free(p);
 			return (NULL);
 		}
-	}
-
-	for (i = 0; i < height; i++)
-	{
 		for (j = 0; j < width; j++)
-		{
-			hello[i][j] = 0;
-		}
+			p[i][j] = 0;
 	}
 
-	return (hello);
+	return (p);
 }
