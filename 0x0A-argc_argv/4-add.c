@@ -9,7 +9,7 @@
 
 int main(int ac, char **av)
 {
-	int i = 1, j, k, b;
+	int i = 1, j;
 
 	if (validate(av) == -1)
 	{
@@ -71,4 +71,6 @@ int validate(char **av)
 			}
 		}
 	}
+
+	return (0);
 }
