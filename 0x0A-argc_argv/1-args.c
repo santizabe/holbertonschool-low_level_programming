@@ -7,7 +7,7 @@
 * Return: 0
 */
 
-int main(int ac, char **av)
+int main(int ac, char __attribute__ ((unused)) **av)
 {
 	unsigned int i = ac - 1;
 
