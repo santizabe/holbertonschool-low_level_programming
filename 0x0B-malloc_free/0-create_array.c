@@ -9,7 +9,7 @@
 
 char *create_array(unsigned int size, char c)
 {
-	int i;
+	unsigned int i = 0;
 	char *array;
 
 	array = malloc((sizeof(char) * size) + 1);
@@ -18,8 +18,11 @@ char *create_array(unsigned int size, char c)
 		free(array);
 		return (NULL);
 	}
-	for (i = 0; array[i]; i++)
+	while (i < size)
+	{
 		array[i] = c;
+		i++;
+	}
 	array[i] = '\0';
 
 	return (array);
